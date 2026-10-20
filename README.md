@@ -238,6 +238,9 @@ Figures 2 and 4 show patient images; `.gitignore` excludes the figure outputs an
 
 ## Implementation notes
 
+- Lesion prediction needs only the encoder and the lesion decoder; the anatomy decoder is a training-time head (HBS
+  and CVFM are disabled). `model_complexity.py` reports size, operations, time and memory for this lesion path and
+  checks that the lesion probability maps are identical to those of the full network used in the evaluation.
 - `bonescan.training.fit` optimises all parameters in one AdamW group, so `LR_ENC` is recorded in
   `run_metadata.json` but not applied: the encoder trains with `LR` in every run, MAE-initialised or not.
 - The learning rate follows two linear warm-up epochs and a cosine decay towards 5% of `LR` over `EPOCHS` epochs;
