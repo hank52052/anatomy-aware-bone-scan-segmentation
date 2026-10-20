@@ -1,0 +1,17 @@
+# Versions installed in the environment used for training and evaluation (Python 3.11.15, CUDA 12.8).
+#
+# PyTorch is not pinned below because the experiments used a nightly build that is not on PyPI:
+#   torch 2.12.0.dev20260407+cu128 (CUDA 12.8, cuDNN 9.20)
+# Install a CUDA build of PyTorch first (https://pytorch.org/get-started/locally/), then run
+#   pip install -r requirements.txt
+# The code was not tested with other PyTorch versions. torchvision is not used.
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.8.0
+scikit-image==0.26.0
+pandas==3.0.3
+matplotlib==3.10.9
+seaborn==0.13.2
+pillow==12.2.0
+SimpleITK==2.5.5
+nnunetv2==2.7.0

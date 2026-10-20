@@ -1,0 +1,62 @@
+<mxfile host="drawio">
+  <diagram id="workflow" name="Study workflow">
+    <mxGraphModel dx="1260" dy="580" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1260" pageHeight="580" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Row 1: data sources -->
+        <mxCell id="d1" value="BS-80K (public)&lt;br&gt;6,494 views" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Hospital A&lt;br&gt;200 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="10" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="Hospital B&lt;br&gt;142 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;95 with lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="650" y="10" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="Anatomy cohort&lt;br&gt;361 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;skeletal labels&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#C16636;strokeWidth=3;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="970" y="10" width="280" height="110" as="geometry" />
+        </mxCell>
+        <!-- Row 2: training stages -->
+        <mxCell id="s1" value="Stage 1&lt;br&gt;MAE pre-training&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;7,900 views incl. in-house&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#E8F4F2;strokeColor=#168B8A;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="10" y="190" width="280" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="Stage 2&lt;br&gt;Anatomy-aware multi-task training&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;final model: two-network ensemble&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#E8F4F2;strokeColor=#168B8A;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="920" height="110" as="geometry" />
+        </mxCell>
+        <!-- Row 3: evaluation container -->
+        <mxCell id="ev" value="Evaluation (threshold 0.5)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;fillColor=#F5F8F9;strokeColor=#D8E3E6;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;verticalAlign=top;align=left;spacingLeft=16;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="10" y="370" width="1240" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="5-fold cross-validation&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;303 patients&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Baselines: BSci-Seg, nnU-Net&lt;br&gt;&lt;font color=&quot;#C16636&quot;&gt;Ablations: anatomy task, MAE&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="450" y="420" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Lesion-free scans: 99 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;false positives, AUC&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="860" y="420" width="360" height="110" as="geometry" />
+        </mxCell>
+        <!-- Arrows (no labels on lines) -->
+        <mxCell id="a1" style="exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=block;endFill=1;html=1;strokeColor=#61747B;strokeWidth=2.5;" edge="1" parent="1" source="d1" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" style="exitX=0.5;exitY=1;entryX=0.152;entryY=0;endArrow=block;endFill=1;html=1;strokeColor=#61747B;strokeWidth=2.5;" edge="1" parent="1" source="d2" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" style="exitX=0.5;exitY=1;entryX=0.5;entryY=0;endArrow=block;endFill=1;html=1;strokeColor=#61747B;strokeWidth=2.5;" edge="1" parent="1" source="d3" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" style="exitX=0.5;exitY=1;entryX=0.848;entryY=0;endArrow=block;endFill=1;html=1;strokeColor=#C16636;strokeWidth=2.5;" edge="1" parent="1" source="d4" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" style="exitX=1;exitY=0.5;entryX=0;entryY=0.5;endArrow=block;endFill=1;html=1;strokeColor=#168B8A;strokeWidth=2.5;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" style="exitX=0.5;exitY=1;entryX=0.629;entryY=0;endArrow=block;endFill=1;html=1;strokeColor=#61747B;strokeWidth=2.5;" edge="1" parent="1" source="s2" target="ev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,24 @@
+# Data, checkpoints and run outputs (never commit patient data or trained weights)
+data/
+runs/
+nnunet/
+checkpoints/
+results/
+*.pt
+*.pth
+*.pkl
+*.npz
+*.npy
+*.nii
+*.nii.gz
+*.log
+
+# Figure outputs (Figures 2 and 4 contain patient images)
+figures/*.png
+figures/*.pdf
+figures/fig2_model_architecture*.drawio
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
