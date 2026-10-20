@@ -2,7 +2,7 @@
 
 (a) Distribution of the areas of the annotated lesions; (b) lesion-level sensitivity of the final model by lesion
 area; (c) image-level DSC of the final model against the total lesion area of each lesion-positive view.
-Hospital A is teal with solid lines and circles, Hospital B orange with dashed lines and squares, so colour is never
+CMUH is teal with solid lines and circles, TTMHH orange with dashed lines and squares, so colour is never
 the only cue. Usage: python make_figure6.py <project_dir>
 """
 import json
@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt  # noqa: E402
 
 PROJECT = Path(sys.argv[1])
 INK, MUTED, GRID = "#12333D", "#61747B", "#D8E3E6"
-STYLE = {"A": {"color": "#168B8A", "ls": "-", "marker": "o", "name": "Hospital A"},
-         "B": {"color": "#C16636", "ls": "--", "marker": "s", "name": "Hospital B"}}
+STYLE = {"A": {"color": "#168B8A", "ls": "-", "marker": "o", "name": "CMUH"},
+         "B": {"color": "#C16636", "ls": "--", "marker": "s", "name": "TTMHH"}}
 METHOD = "ours_ens"
 MIN_N = 30  # bins with fewer lesions are drawn with open markers
 AREA_EDGES = 10 ** np.arange(1.5, 4.75, 0.5)  # view total lesion area bins for the binned means in (c)

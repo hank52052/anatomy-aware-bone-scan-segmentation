@@ -5,8 +5,9 @@ Lesions are 8-connected components of the reference masks of the lesion-positive
 views as the image-level DSC). Predicted masks and per-view DSC come from the fixed-threshold evaluation
 (runs/final_eval). Hospital comparisons use per-patient summaries (Mann-Whitney U), so that lesions of one patient do
 not count as independent observations. The hospital effect on per-view DSC after adjustment for the total lesion
-area of the view is the coefficient of an ordinary least-squares fit DSC ~ log10(area) + hospital B, with a 95% CI
-from 5,000 bootstrap resamples of patients.
+area of the view is the coefficient of an ordinary least-squares fit DSC ~ log10(area) + TTMHH, with a 95% CI
+from 5,000 bootstrap resamples of patients. Hospitals are keyed "A" (China Medical University Hospital, CMUH) and
+"B" (Tungs' Taichung MetroHarbor Hospital, TTMHH) in the output.
 Usage (from the repository root): python code/final_eval/lesion_size_by_hospital.py <out_json>
 """
 import json
@@ -40,7 +41,7 @@ def summary(values) -> dict:
 
 
 def ols_hospital(rows) -> dict:
-    """DSC ~ 1 + log10(total lesion area) + hospital B; CI of the hospital coefficient by patient bootstrap."""
+    """DSC ~ 1 + log10(total lesion area) + TTMHH indicator; CI of the hospital coefficient by patient bootstrap."""
     def fit(rr):
         x = np.column_stack([np.ones(len(rr)), np.log10([r["area"] for r in rr]), [r["hosp"] == "B" for r in rr]])
         return np.linalg.lstsq(x, np.array([r["dsc"] for r in rr]), rcond=None)[0]
@@ -171,7 +172,7 @@ def main() -> None:
 
     Path(sys.argv[1]).write_text(json.dumps(out))
     for h, s in out["hospitals"].items():
-        print(f"Hospital {h}: patients {s['n_patients']} views {s['n_views']} lesions {s['n_lesions']} "
+        print(f"{ {'A': 'CMUH', 'B': 'TTMHH'}[h]}: patients {s['n_patients']} views {s['n_views']} lesions {s['n_lesions']} "
               f"area median {s['lesion_area']['median']:.0f} (IQR {s['lesion_area']['q1']:.0f}-{s['lesion_area']['q3']:.0f}) "
               f"<32px {s['share_lt32']:.2f} view total median {s['view_total_area']['median']:.0f} "
               f"lesions/view median {s['lesions_per_view']['median']:.0f} mean {s['lesions_per_view']['mean']:.1f} "

@@ -1,8 +1,8 @@
 """Patient-level detection AUC (rule fixed 2026-10-20 06:10 before computing).
 
 Score of a patient = sum of the lesion probability over both views (expected lesion area). Positives: the
-lesion-positive cross-validation patients; negatives: the lesion-free patients (Hospital A without metastases in
-cross-validation, Hospital B without metastases scored by the model of their hash fold). Our model = mean of the
+lesion-positive cross-validation patients; negatives: the lesion-free patients (CMUH patients without metastases in
+cross-validation, TTMHH patients without metastases scored by the model of their hash fold). Our model = mean of the
 probabilities of our networks with and without the anatomy task. 95% CIs from 5,000 bootstrap resamples of
 patients; differences (ours minus other) from paired resamples.
 

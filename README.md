@@ -53,7 +53,8 @@ inside it; run the commands below from the repository root, or symlink these fol
 
 ## Data
 
-- **In-house data.** Scans from two hospitals (Hospital A and Hospital B). They cannot be shared because of patient
+- **In-house data.** Scans from two hospitals in Taichung, Taiwan: China Medical University Hospital (CMUH) and
+  Tungs' Taichung MetroHarbor Hospital (TTMHH). They cannot be shared because of patient
   privacy.
 - **BS-80K.** Public dataset of Huang et al. (2022): Huang Z, Pu X, Tang G, Ping M, Jiang G, Wang M, Wei X, Ren Y.
   BS-80K: the first large open-access dataset of bone scan images. *Comput Biol Med.* 2022;151(Pt A):106221.
@@ -83,10 +84,10 @@ same `source` and `patient_id` form one scan; the posterior view is mirrored whe
 
 | `source` | Patients | Role |
 |---|---|---|
-| `meta_breast_meta`, `meta_breast_non-meta`, `meta_prostate_meta`, `meta_prostate_non-meta` | 90, 10, 50, 50 | Hospital A lesion cohort (lesion masks); `non-meta` = without metastases |
-| `new_mb`, `new_mp` | 50, 53 | Hospital B lesion cohort (lesion masks for most patients) |
-| `new_bb`, `new_bp` | 22, 17 | Hospital B patients without metastases; scored, never used for supervised training |
-| `old_breast`, `old_prostate` | 165, 196 | Hospital A anatomy cohort (skeletal labels only) |
+| `meta_breast_meta`, `meta_breast_non-meta`, `meta_prostate_meta`, `meta_prostate_non-meta` | 90, 10, 50, 50 | CMUH lesion cohort (lesion masks); `non-meta` = without metastases |
+| `new_mb`, `new_mp` | 50, 53 | TTMHH lesion cohort (lesion masks for most patients) |
+| `new_bb`, `new_bp` | 22, 17 | TTMHH patients without metastases; scored, never used for supervised training |
+| `old_breast`, `old_prostate` | 165, 196 | CMUH anatomy cohort (skeletal labels only) |
 | `bs80k_wb` | 3,247 | BS-80K whole-body views (MAE pre-training only) |
 
 Each lesion library is a pickled list of dicts with `ant_crop` and `post_crop` (float32 crops of the same lesion in
@@ -248,7 +249,7 @@ Figures 2 and 4 show patient images; `.gitignore` excludes the figure outputs an
 - The curriculum value `α` printed in the training log only acts on the HBS module, which is disabled.
 - The MAE loss is the plain mean squared error over the masked pixels.
 - The MAE pre-training set contains the in-house views of all cohorts (images only, no labels), including the
-  patients of every validation fold and the Hospital B patients without metastases.
+  patients of every validation fold and the TTMHH patients without metastases.
 - In the BSci-Seg re-implementation the patch-level dual-sampling contrastive term never becomes active (the encoder and
   decoder feature maps are paired in the wrong order), so the baseline is the architecture without that loss.
 - The nnU-Net export gives lesion-cohort views without a lesion mask an empty mask.

@@ -8,13 +8,13 @@
         <mxCell id="d1" value="BS-80K (public)&lt;br&gt;6,494 views" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="10" y="10" width="280" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="d2" value="Hospital A&lt;br&gt;200 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+        <mxCell id="d2" value="CMUH&lt;br&gt;200 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="330" y="10" width="280" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="d3" value="Hospital B&lt;br&gt;142 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;95 with lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+        <mxCell id="d3" value="TTMHH&lt;br&gt;142 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;95 with lesion masks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#12333D;strokeWidth=2;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="650" y="10" width="280" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="d4" value="Anatomy cohort&lt;br&gt;361 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;skeletal labels&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#C16636;strokeWidth=3;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
+        <mxCell id="d4" value="Anatomy cohort (CMUH)&lt;br&gt;361 patients&lt;br&gt;&lt;font color=&quot;#61747B&quot;&gt;skeletal labels&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#FFFFFF;strokeColor=#C16636;strokeWidth=3;fontFamily=Times New Roman;fontStyle=1;fontSize=22;fontColor=#12333D;spacing=8;" vertex="1" parent="1">
           <mxGeometry x="970" y="10" width="280" height="110" as="geometry" />
         </mxCell>
         <!-- Row 2: training stages -->

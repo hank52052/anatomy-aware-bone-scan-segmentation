@@ -41,7 +41,7 @@ for i in range(n_cases):
         rgb = np.repeat(base[..., None], 3, axis=2)
         if key == "gt":
             rgb[gt] = 0.35 * rgb[gt] + 0.65 * np.array(GT)
-            label = f"Hospital {meta['hospital']}"
+            label = {"A": "CMUH", "B": "TTMHH"}[meta["hospital"]]  # hospital keys used in cases.npz
         else:
             pred = z[f"c{i}_{key}"].astype(bool)
             rgb[pred] = 0.35 * rgb[pred] + 0.65 * np.array(FP)
