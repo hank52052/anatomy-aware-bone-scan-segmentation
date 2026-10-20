@@ -259,4 +259,4 @@ Manuscript under review; citation will be added on publication.
 
 ## License
 
-To be added by the authors.
+Released under the MIT License; see [`LICENSE`](LICENSE).
